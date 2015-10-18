@@ -11,7 +11,7 @@ Tested on: OSX 10.11 El Capitan
 
 ```
 chmod a+x install.sh
-./install.sh
+bash install.sh
 ```
 
 # License
