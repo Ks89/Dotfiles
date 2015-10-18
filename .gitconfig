@@ -1,0 +1,14 @@
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+[user]
+	name = Stefano Cappa
+	email = stefano.cappa@mail.polimi.it
+[core]
+	autocrlf = input
+	editor = subl -n -w
+[color]
+	ui = true
+[alias]
+	co = checkout
