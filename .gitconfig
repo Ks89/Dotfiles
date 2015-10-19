@@ -12,3 +12,13 @@
 	ui = true
 [alias]
 	co = checkout
+	cob = checkout -b
+	bd = branch -d
+	cm = commit -m
+	c = commit
+	s = status
+	a = add
+	all = add -A
+ 	r-- = reset --
+	rh = reset --hard
+	
