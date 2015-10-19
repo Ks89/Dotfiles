@@ -19,6 +19,9 @@
 	s = status
 	a = add
 	all = add -A
+	p = push
+	pom = push origin master
+	pum = push upstream master
  	r-- = reset --
 	rh = reset --hard
 	
