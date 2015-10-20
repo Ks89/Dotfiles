@@ -22,6 +22,8 @@
 	p = push
 	pom = push origin master
 	pum = push upstream master
+	poom = !git push origin master && git push upstream master
+	puum = !git push upstream master && git origin upstream master
  	r-- = reset --
 	rh = reset --hard
 	
