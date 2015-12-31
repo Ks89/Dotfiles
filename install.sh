@@ -45,6 +45,7 @@ bew install git-lfs
 brew install tig
 brew install wget
 brew install bash-completion
+brew install nginx
 
 #show hidden files on osx
 defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app
