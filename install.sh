@@ -30,10 +30,10 @@
 
 echo Welcome to KS89 dotfiles 1.1 - last update 10/01/2016
 
-echo Attention! If you want to run this script install Xcode command line developer tools
+echo Attention! If you want to run this script install Xcode command line developer tools and Node.js
 echo Please, insert your password if requested
 
-read -p "Are you ready? Type y or n " -n 1 -r
+read -p "Do u have Nodejs and Xcode installed? Are you ready? Type y or n " -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -67,12 +67,24 @@ then
     echo installing mongodb
     brew install mongodb --with-openssl
 
+    #create a folder for mongodb to prevent an error on mac osx
+    sudo mkdir -p /data/db
+
     echo installing redis server
-    wget http://download.redis.io/releases/redis-3.2.4.tar.gz
-    tar xzf redis-3.2.4.tar.gz
-    cd redis-3.2.4
-    make
+    wget http://download.redis.io/redis-stable.tar.gz
+    tar xvzf redis-stable.tar.gz
+    cd redis-stable
+    make install
     cd ..
-    rm -rf redis-3.2.4
-    rm -f redis-3.2.4.tar.gz
+    rm -rf redis-stable
+    rm -f redis-stable.tar.gz
+
+    echo installing some global packages from npm
+    sudo npm install -g karma-cli
+    sudo npm install --global mocha
+    sudo npm install -g webpack@2.1.0-beta.22
+    sudo npm install -g typescript
+    sudo npm install -g nodemon
+    sudo npm install -g gulp@github:gulpjs/gulp#4.0
+
 fi
