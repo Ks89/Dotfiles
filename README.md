@@ -3,7 +3,7 @@
 My dotfiles for OSX.
 
 # News
-Last update: 10-01-16
+Last update: 10-02-16
 
 Tested on: OSX 10.12 Sierra
 
