@@ -23,42 +23,18 @@
 #THE SOFTWARE.
 
 #ONLY FOR OSX
+#DON'T EXECUTE THIS - BUT USE install.sh, please
 
-#To be able to execute this
-#chmod a+x install.sh
-#bash install.sh
-
-tput setaf 2; echo "Welcome to KS89 dotfiles 1.1 - last update 10/02/2016"
-
-tput setaf 2; echo "Attention! If you want to run this script install Xcode command line developer tools, Sublime Text and Node.js"
-tput setaf 2; echo "Please, insert your password if requested"
-
-read -p "Do u have Nodejs, Sublime Text and Xcode installed? Are you ready? Type y or n " -n 1 -r
-echo    # (optional) move to a new line
+read -p "Would you install redis-server? Press y or n" -n 1 -r
+echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-    tput setaf 1; echo "getting root privileges"
-    sudo -v
-
-    tput setaf 2; echo "copying files to home dir"
-    cp .bash_profile ~/.bash_profile
-    cp .git-completion.bash ~/.git-completion.bash
-    cp .git-prompt.sh ~/.git-prompt.sh
-    cp .gitconfig ~/.gitconfig
-
-    tput setaf 3; echo "installing homebrew and packages"
-    bash homebrew.sh
-
-    tput setaf 4; echo "applying custom macOs preferences"
-    bash macos.sh
-
-    tput setaf 5; echo "installing redis-server"
-    bash redis.sh
-
-    tput setaf 6; echo "installing some global packages from npm"
-    bash npm.sh
-
-    tput setaf 1; echo "installing other software"
-    bash thirdparty-software.sh
-
+  echo installing redis server
+  wget http://download.redis.io/redis-stable.tar.gz
+  tar xvzf redis-stable.tar.gz
+  cd redis-stable
+  make install
+  cd ..
+  rm -rf redis-stable
+  rm -f redis-stable.tar.gz
 fi

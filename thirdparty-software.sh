@@ -23,42 +23,51 @@
 #THE SOFTWARE.
 
 #ONLY FOR OSX
+#DON'T EXECUTE THIS - BUT USE install.sh, please
 
-#To be able to execute this
-#chmod a+x install.sh
-#bash install.sh
+echo installing sublime text command line utils
+sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 
-tput setaf 2; echo "Welcome to KS89 dotfiles 1.1 - last update 10/02/2016"
-
-tput setaf 2; echo "Attention! If you want to run this script install Xcode command line developer tools, Sublime Text and Node.js"
-tput setaf 2; echo "Please, insert your password if requested"
-
-read -p "Do u have Nodejs, Sublime Text and Xcode installed? Are you ready? Type y or n " -n 1 -r
-echo    # (optional) move to a new line
+echo installing Spectacle
+read -p "Would you install Spectacle? Press y or n" -n 1 -r
+echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-    tput setaf 1; echo "getting root privileges"
-    sudo -v
+  brew cask install spectacle
+fi
 
-    tput setaf 2; echo "copying files to home dir"
-    cp .bash_profile ~/.bash_profile
-    cp .git-completion.bash ~/.git-completion.bash
-    cp .git-prompt.sh ~/.git-prompt.sh
-    cp .gitconfig ~/.gitconfig
+# Install Flux
+read -p "Would you install Flux? Press y or n" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  brew cask install flux
+fi
 
-    tput setaf 3; echo "installing homebrew and packages"
-    bash homebrew.sh
+# Install Java JDK 7 and 8
+read -p "Would you install Java7 and 8? Press y or n" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    brew tap caskroom/versions
+    brew cask install java7
+    brew cask install java
+fi
 
-    tput setaf 4; echo "applying custom macOs preferences"
-    bash macos.sh
+# Install Android SDK, Gradle and Android Studio
+read -p "Would you install android-sdk, Android Studio and gradle? Press y or n" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  brew install android-sdk
+  brew install gradle
+  brew cask install android-studio
+fi
 
-    tput setaf 5; echo "installing redis-server"
-    bash redis.sh
-
-    tput setaf 6; echo "installing some global packages from npm"
-    bash npm.sh
-
-    tput setaf 1; echo "installing other software"
-    bash thirdparty-software.sh
-
+# Install Genymotion
+read -p "Would you install Genymotion? Press y or n" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  brew cask install genymotion
 fi
