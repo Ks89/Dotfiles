@@ -2,7 +2,7 @@
 
 #The MIT License (MIT)
 #
-#Copyright (c) 2015 Stefano Cappa
+#Copyright (c) 2015-2016 Stefano Cappa
 #
 #Permission is hereby granted, free of charge, to any person obtaining a copy
 #of this software and associated documentation files (the "Software"), to deal
@@ -28,27 +28,51 @@
 #chmod a+x install.sh
 #bash install.sh
 
-#copy files to home dir
-cp .bash_profile ~/.bash_profile
-cp .git-completion.bash ~/.git-completion.bash
-cp .git-prompt.sh ~/.git-prompt.sh
-cp .gitconfig ~/.gitconfig
+echo Welcome to KS89 dotfiles 1.1 - last update 10/01/2016
 
-#now install brew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew update
-brew upgrade
+echo Attention! If you want to run this script install Xcode command line developer tools
+echo Please, insert your password if requested
 
-#now install softwares using brew
-brew install readline
-bew install git-lfs
-brew install tig
-brew install wget
-brew install bash-completion
-brew install nginx
+read -p "Are you ready? Type y or n " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    echo copying files to home dir
+    cp .bash_profile ~/.bash_profile
+    cp .git-completion.bash ~/.git-completion.bash
+    cp .git-prompt.sh ~/.git-prompt.sh
+    cp .gitconfig ~/.gitconfig
 
-#show hidden files on osx
-defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app
+    echo installing homebrew
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    brew update
+    brew upgrade
 
-#install sublime text command line utils
-sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+    echo installing software using brew
+    brew install readline
+    bew install git-lfs
+    brew install tig
+    brew install wget
+    brew install bash-completion
+
+    echo show hidden files on osx
+    defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app
+
+    echo installing sublime text command line utils
+    sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+
+    echo installing wget
+    brew install wget
+
+    echo installing mongodb
+    brew install mongodb --with-openssl
+
+    echo installing redis server
+    wget http://download.redis.io/releases/redis-3.2.4.tar.gz
+    tar xzf redis-3.2.4.tar.gz
+    cd redis-3.2.4
+    make
+    cd ..
+    rm -rf redis-3.2.4
+    rm -f redis-3.2.4.tar.gz
+fi
