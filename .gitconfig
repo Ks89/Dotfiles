@@ -4,7 +4,7 @@
 	required = true
 [user]
 	name = Stefano Cappa
-	email = stefano.cappa@mail.polimi.it
+	email = stefano.cappa.ks89@gmail.com
 [core]
 	autocrlf = input
 	editor = subl -n -w
