@@ -29,7 +29,7 @@ echo installing sublime text command line utils
 sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 
 echo installing Spectacle
-read -p "Would you install Spectacle? Press y or n" -n 1 -r
+read -p "Would you install Spectacle? Press y or n: " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -37,7 +37,7 @@ then
 fi
 
 # Install Flux
-read -p "Would you install Flux? Press y or n" -n 1 -r
+read -p "Would you install Flux? Press y or n: " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -45,7 +45,7 @@ then
 fi
 
 # Install Java JDK 7 and 8
-read -p "Would you install Java7 and 8? Press y or n" -n 1 -r
+read -p "Would you install Java7 and 8? Press y or n: " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -55,7 +55,7 @@ then
 fi
 
 # Install Android SDK, Gradle and Android Studio
-read -p "Would you install android-sdk, Android Studio and gradle? Press y or n" -n 1 -r
+read -p "Would you install android-sdk, Android Studio and gradle? Press y or n: " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -65,7 +65,7 @@ then
 fi
 
 # Install Genymotion
-read -p "Would you install Genymotion? Press y or n" -n 1 -r
+read -p "Would you install Genymotion? Press y or n: " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then

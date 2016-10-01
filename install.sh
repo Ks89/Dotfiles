@@ -28,12 +28,12 @@
 #chmod a+x install.sh
 #bash install.sh
 
-tput setaf 2; echo "Welcome to KS89 dotfiles 1.1 - last update 10/02/2016"
+tput setaf 2; echo "Welcome to KS89 dotfiles 2.0 - last update 10/02/2016"
 
-tput setaf 2; echo "Attention! If you want to run this script install Xcode command line developer tools, Sublime Text and Node.js"
+tput setaf 2; echo "Attention! If you want to run this script install Xcode command line developer tools and Sublime Text"
 tput setaf 2; echo "Please, insert your password if requested"
 
-read -p "Do u have Nodejs, Sublime Text and Xcode installed? Are you ready? Type y or n " -n 1 -r
+read -p "Do u have Sublime Text and Xcode installed? Are you ready? Type y or n " -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -46,10 +46,10 @@ then
     cp .git-prompt.sh ~/.git-prompt.sh
     cp .gitconfig ~/.gitconfig
 
-    tput setaf 3; echo "installing homebrew and packages"
+    tput setaf 3; echo "installing homebrew and packages (for instance node.js and npm)"
     bash homebrew.sh
 
-    tput setaf 4; echo "applying custom macOs preferences"
+    tput setaf 4; echo "applying custom macOS preferences"
     bash macos.sh
 
     tput setaf 5; echo "installing redis-server"

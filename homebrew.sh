@@ -34,7 +34,7 @@ else
     brew upgrade
 fi
 
-echo installing homebrew packages
+echo installing homebrew packages, only if not already available
 which -s git || brew install git
 which -s git-lfs || brew install git-lfs
 which -s tig || brew install tig
@@ -43,7 +43,15 @@ which -s wget || brew install wget
 which -s bash-completion || brew install bash-completion
 which -s autojump || brew install autojump
 
-read -p "Would you install/compile MongoDb? Press y or n" -n 1 -r
+read -p "Would you install Node.js and npm? Press y or n: " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  echo installing nodejs and npm, only if not already available
+  which -s node || brew install node
+fi
+
+read -p "Would you install/compile MongoDb? Press y or n: " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then

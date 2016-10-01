@@ -25,7 +25,7 @@
 #ONLY FOR OSX
 #DON'T EXECUTE THIS - BUT USE install.sh, please
 
-read -p "Would you install redis-server? Press y or n" -n 1 -r
+read -p "Would you install redis-server? Press y or n: " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
