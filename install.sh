@@ -60,5 +60,9 @@ then
 
     tput setaf 1; echo "installing other software"
     bash thirdparty-software.sh
-
+    
+    tput setaf 2; echo "source ~/.bash_profile called"
+    source ~/.bash_profile
+    
+    tput setaf 3; echo "Thank u, bye bye!"
 fi
