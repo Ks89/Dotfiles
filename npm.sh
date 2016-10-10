@@ -36,4 +36,5 @@ then
   sudo npm install -g typescript
   sudo npm install -g nodemon
   sudo npm install -g gulp@github:gulpjs/gulp#4.0
+  sudo npm install -g npm-check
 fi
