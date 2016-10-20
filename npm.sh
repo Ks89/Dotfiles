@@ -32,9 +32,10 @@ then
   echo installing npm global packages
   sudo npm install -g karma-cli
   sudo npm install -g mocha
-  sudo npm install -g webpack@2.1.0-beta.22
+  sudo npm install -g webpack
   sudo npm install -g typescript
   sudo npm install -g nodemon
   sudo npm install -g gulp@github:gulpjs/gulp#4.0
   sudo npm install -g npm-check
+  sudo npm install -g remap-istanbul
 fi
