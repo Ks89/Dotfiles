@@ -43,6 +43,7 @@ which -s wget || brew install wget
 which -s bash-completion || brew install bash-completion
 which -s autojump || brew install autojump
 which -s python3 || brew install python3
+which -s git-extras || brew install git-extras
 
 read -p "Would you install Node.js and npm? Press y or n: " -n 1 -r
 echo
