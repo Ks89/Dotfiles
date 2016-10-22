@@ -40,6 +40,7 @@ then
   sudo npm install -g lite-server
   sudo npm install -g remap-istanbul
   sudo npm install -g webdriver-manager
+  sudo npm install -g protractor
 fi
 
 read -p "Would you update webdriver-manager to be able to use Selenium Server? Press y or n: " -n 1 -r
