@@ -41,6 +41,8 @@ then
   sudo npm install -g remap-istanbul
   sudo npm install -g webdriver-manager
   sudo npm install -g protractor
+  sudo npm install -g nsp
+  sudo npm install -g codeclimate-test-reporter
 fi
 
 read -p "Would you update webdriver-manager to be able to use Selenium Server? Press y or n: " -n 1 -r
