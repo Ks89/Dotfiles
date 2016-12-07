@@ -28,6 +28,7 @@
 echo installing sublime text command line utils
 sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 
+# Install Spectacle
 echo installing Spectacle
 read -p "Would you install Spectacle? Press y or n: " -n 1 -r
 echo
@@ -36,7 +37,18 @@ then
   brew cask install spectacle
 fi
 
+# Install nvm
+echo installing nvm
+read -p "Would you install nvm? Press y or n: " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
+fi
+
+
 # Install Flux
+echo installing flux
 read -p "Would you install Flux? Press y or n: " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
@@ -45,6 +57,7 @@ then
 fi
 
 # Install Java JDK 7 and 8
+echo installing jdk
 read -p "Would you install Java7 and 8? Press y or n: " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
@@ -55,6 +68,7 @@ then
 fi
 
 # Install Android SDK, Gradle and Android Studio
+echo installing android studio
 read -p "Would you install android-sdk, Android Studio and gradle? Press y or n: " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
@@ -65,6 +79,7 @@ then
 fi
 
 # Install Genymotion
+echo installing genymotion
 read -p "Would you install Genymotion? Press y or n: " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
