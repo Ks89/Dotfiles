@@ -34,6 +34,7 @@ then
   sudo npm install -g mocha
   sudo npm install -g webpack
   sudo npm install -g typescript
+  sudo npm install -g typings
   sudo npm install -g nodemon
   sudo npm install -g gulp@github:gulpjs/gulp#4.0
   sudo npm install -g npm-check
@@ -44,6 +45,8 @@ then
   sudo npm install -g nsp
   sudo npm install -g codeclimate-test-reporter
   sudo npm install -g istanbul
+  sudo npm install -g snyk
+  sudo npm install -g apidoc
 fi
 
 read -p "Would you update webdriver-manager to be able to use Selenium Server? Press y or n: " -n 1 -r
