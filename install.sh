@@ -40,6 +40,9 @@ then
     tput setaf 1; echo "getting root privileges"
     sudo -v
 
+    tput setaf 1; echo "accept xcode license to proceed"
+    sudo xcodebuild -license
+
     tput setaf 2; echo "copying files to home dir"
     cp .bash_profile ~/.bash_profile
     cp .git-completion.bash ~/.git-completion.bash
