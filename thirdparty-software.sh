@@ -86,3 +86,12 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
   brew cask install genymotion
 fi
+
+# Install travis
+echo installing travis
+read -p "Would you install travis? Press y or n: " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  sudo gem install travis
+fi

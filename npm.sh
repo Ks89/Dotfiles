@@ -33,7 +33,7 @@ then
   sudo npm install -g karma-cli
   sudo npm install -g mocha
   sudo npm install -g webpack
-  sudo npm install -g typescript
+  sudo npm install -g typescript@2.0.10
   sudo npm install -g typings
   sudo npm install -g nodemon
   sudo npm install -g gulp@github:gulpjs/gulp#4.0
