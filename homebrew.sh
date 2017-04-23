@@ -50,7 +50,9 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   echo installing nodejs and npm, only if not already available
+  echo if necessary run brew unlink node
   which -s node || brew install node
+  brew link node
 fi
 
 read -p "Would you install/compile MongoDb? Press y or n: " -n 1 -r
@@ -62,17 +64,6 @@ then
   #create a folder for mongodb to prevent an error on mac osx
   sudo mkdir -p /data/db
 fi
-
-read -p "Would you install/compile yarn? Press y or n: " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-  echo installing yarn
-  brew install yarn
-  echo checking yarn version
-  yarn --version
-fi
-
 
 read -p "Would you install/compile haskell? Press y or n: " -n 1 -r
 echo
