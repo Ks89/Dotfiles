@@ -72,3 +72,12 @@ then
   echo checking yarn version
   yarn --version
 fi
+
+
+read -p "Would you install/compile haskell? Press y or n: " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  echo installing haskell
+  brew cask install haskell-platform
+fi
