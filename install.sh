@@ -2,7 +2,7 @@
 
 #The MIT License (MIT)
 #
-#Copyright (c) 2015-2016 Stefano Cappa
+#Copyright (c) 2015-2017 Stefano Cappa
 #
 #Permission is hereby granted, free of charge, to any person obtaining a copy
 #of this software and associated documentation files (the "Software"), to deal
@@ -63,9 +63,12 @@ then
 
     tput setaf 1; echo "installing other software"
     bash thirdparty-software.sh
-    
+
+    tput setaf 5; echo "installing Apache Http and Bench"
+    bash apache-bench.sh
+
     tput setaf 2; echo "source ~/.bash_profile called"
     source ~/.bash_profile
-    
+
     tput setaf 3; echo "Thank u, bye bye!"
 fi

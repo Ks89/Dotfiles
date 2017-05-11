@@ -34,6 +34,9 @@ ulimit -S -n 1024
 #Bash alias
 alias cd..="cd .."
 
+export APACHE_BENCH=/Users/Ks89/httpd/httpd-2.4.25/support/ab
+export PATH=$APACHE_BENCH:$PATH
+
 export PATH="/usr/local/git/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:$PATH"
 
 PATH=~/bin:$PATH

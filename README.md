@@ -3,7 +3,7 @@
 My dotfiles for OSX.
 
 # News
-Last update: 10-02-16
+Last update: 11-05-17
 
 Tested on: OSX 10.12 Sierra
 
@@ -18,7 +18,7 @@ bash install.sh
 ```
 The MIT License (MIT)
 
-Copyright (c) 2015-2016 Stefano Cappa
+Copyright (c) 2015-2017 Stefano Cappa
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

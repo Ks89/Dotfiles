@@ -2,7 +2,7 @@
 
 #The MIT License (MIT)
 #
-#Copyright (c) 2015-2016 Stefano Cappa
+#Copyright (c) 2015-2017 Stefano Cappa
 #
 #Permission is hereby granted, free of charge, to any person obtaining a copy
 #of this software and associated documentation files (the "Software"), to deal
@@ -42,6 +42,8 @@ then
   sudo npm install -g codeclimate-test-reporter
   sudo npm install -g istanbul
   sudo npm install -g snyk
+  sudo npm install pm2 -g
+  pm2 update
 fi
 
 read -p "Would you update webdriver-manager to be able to use Selenium Server? Press y or n: " -n 1 -r

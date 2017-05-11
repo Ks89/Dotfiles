@@ -25,16 +25,24 @@
 #ONLY FOR OSX
 #DON'T EXECUTE THIS - BUT USE install.sh, please
 
-read -p "Would you install redis-server? Press y or n: " -n 1 -r
+# Install Apache Httpd with Apache bench (software to test your server)
+echo installing Apache Httpd with Apache bench
+read -p "Would you install Apache Httpd with Apache bench? Press y or n: " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-  echo installing redis server
-  wget http://download.redis.io/redis-stable.tar.gz
-  tar xvzf redis-stable.tar.gz
-  cd redis-stable
-  make install
-  cd ..
-  rm -rf redis-stable
-  rm -f redis-stable.tar.gz
+  wget -P ~/httpd/ http://apache.mirrors.pair.com/httpd/httpd-2.4.25.tar.bz2
+  tar xzvf ~/httpd/httpd-2.4.25.tar.bz2 -C ~/httpd/
+  cd ~/httpd/httpd-2.4.25/srclib
+  wget http://apache.panu.it//apr/apr-1.5.2.tar.bz2
+  wget http://apache.panu.it//apr/apr-util-1.5.4.tar.bz2
+  tar xzvf ~/httpd/httpd-2.4.25/srclib/apr-1.5.2.tar.bz2 -C ~/httpd/httpd-2.4.25/srclib/
+  tar xzvf ~/httpd/httpd-2.4.25/srclib/apr-util-1.5.4.tar.bz2 -C ~/httpd/httpd-2.4.25/srclib/
+  mv ~/httpd/httpd-2.4.25/srclib/apr-1.5.2 ~/httpd/httpd-2.4.25/srclib/apr
+  mv ~/httpd/httpd-2.4.25/srclib/apr-util-1.5.4 ~/httpd/httpd-2.4.25/srclib/apr-util
+  cd ~/httpd/httpd-2.4.25
+  ./configure
+  make
+  cd ~/httpd/httpd-2.4.25
+  sudo chmod -R a+x support/
 fi
