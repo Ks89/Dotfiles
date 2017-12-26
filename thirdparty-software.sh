@@ -78,7 +78,14 @@ then
     brew install gradle
     brew cask install android-sdk
     brew cask install android-ndk
+
+    echo adding platform-tools to install fastboot, adb and so on
     sdkmanager --update
+    sdkmanager --list
+    sdkmanager "tools"
+    sdkmanager "platform-tools"
+    sdkmanager "build-tools;27.0.3"
+    sdkmanager "platform-tools" "platforms;android-27"
 
     echo to run sdkmanager you need Java 8 JDK in your PATH variable
     
