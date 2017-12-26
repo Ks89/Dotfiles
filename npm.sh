@@ -30,19 +30,18 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   echo installing npm global packages
-  sudo npm install -g karma-cli
-  sudo npm install -g mocha
-  sudo npm install -g typings
-  sudo npm install -g nodemon
-  sudo npm install -g npm-check
-  sudo npm install -g lite-server
-  sudo npm install -g webdriver-manager
-  sudo npm install -g protractor
-  sudo npm install -g nsp
-  sudo npm install -g codeclimate-test-reporter
-  sudo npm install -g istanbul
-  sudo npm install -g snyk
-  sudo npm install pm2 -g
+  npm install -g typings
+  npm install -g nodemon
+  npm install -g npm-check
+  npm install -g lite-server
+  npm install -g http-server
+  npm install -g @angular/cli
+  npm install -g webdriver-manager
+  npm install -g nsp
+  npm install -g codeclimate-test-reporter
+  npm install -g snyk
+  npm install -g pm2
+  npm install -g forever
   pm2 update
 fi
 

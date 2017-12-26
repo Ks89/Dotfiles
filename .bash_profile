@@ -1,22 +1,30 @@
-export ANDROID_SDK_ROOT=/Users/Ks89/android-sdk-macosx
-
 export HOME=/Users/Ks89
-
-export PATH="$ANDROID_SDK_ROOT/tools/":"$ANDROID_SDK_ROOT/platform-tools/":"$PATH"
-
-export PATH="$ANDROID_SDK_HOME/tools/":"$ANDROID_SDK_HOME/platform-tools/":"$PATH"
-
-export PATH="$ANDROID_NDK_ROOT":"$PATH"
 
 export PATH="$HOME":"$PATH"
 
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home"
 
-export M2_HOME="/Users/Ks89/apache-maven"
+export ANT_HOME="/usr/local/opt/ant"
+export GRADLE_HOME="/usr/local/opt/gradle"
 
+export M2_HOME="/usr/local/opt/maven"
+export MAVEN_HOME="/usr/local/opt/maven"
 export M2_REPO="/Users/Ks89/.m2/repository"
 
+export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
+export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
+
+export SONAR_SCANNER="~/sonar-scanner"
+
+export PATH=$ANT_HOME/bin:$PATH
+export PATH=$MAVEN_HOME/bin:$PATH
+export PATH=$GRADLE_HOME/bin:$PATH
+export PATH=$ANDROID_SDK_ROOT/tools:$PATH
+export PATH=$ANDROID_NDK_HOME/tools:$PATH
+
 export PATH=$JAVA_HOME/bin:$PATH
+
+export PATH=$SONAR_SCANNER/bin:$PATH
 
 export PATH=/opt/local/bin:$PATH
 

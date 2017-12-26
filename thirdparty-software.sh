@@ -43,7 +43,7 @@ read -p "Would you install nvm? Press y or n: " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
 fi
 
 
@@ -58,24 +58,31 @@ fi
 
 # Install Java JDK 7 and 8
 echo installing jdk
-read -p "Would you install Java7 and 8? Press y or n: " -n 1 -r
+read -p "Would you install Java8 and 9? Press y or n: " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     brew tap caskroom/versions
-    brew cask install java7
+    brew cask install java8
     brew cask install java
 fi
 
 # Install Android SDK, Gradle and Android Studio
 echo installing android studio
-read -p "Would you install android-sdk, Android Studio and gradle? Press y or n: " -n 1 -r
+read -p "Would you install android-sdk, ant, maven and gradle? Press y or n: " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-  brew install android-sdk
-  brew install gradle
-  brew cask install android-studio
+    brew install ant
+    brew install maven
+    brew install gradle
+    brew cask install android-sdk
+    brew cask install android-ndk
+    sdkmanager --update
+
+    echo to run sdkmanager you need Java 8 JDK in your PATH variable
+    
+    #brew cask install android-studio
 fi
 
 # Install Genymotion
