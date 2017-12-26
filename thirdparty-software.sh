@@ -89,6 +89,8 @@ then
 
     echo to run sdkmanager you need Java 8 JDK in your PATH variable
     
+    sudo chmod 777 /usr/local/share/android-sdk/platform-tools/fastboot
+
     #brew cask install android-studio
 fi
 
