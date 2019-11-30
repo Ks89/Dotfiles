@@ -32,8 +32,8 @@ source ~/.git-prompt.sh
 
 export PS1="$(tput bold)$(tput setaf 2)\u@\h$(tput setaf 6):\W$(tput setaf 3)\$(__git_ps1)$(tput setaf 6) \$ $(tput sgr0)"
 
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
+if [ -f ~/.git-completion.sh ]; then
+  . ~/.git-completion.sh
 fi
 
 # set the number of open files to be 1024

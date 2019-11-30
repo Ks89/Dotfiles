@@ -29,11 +29,5 @@
 echo show hidden files on osx
 defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app
 
-echo increase macos backspace speed
-defaults write NSGlobalDomain KeyRepeat -int 2
-
-echo show filename extensions
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-
 echo Restarting Finder
 sudo killall Finder
