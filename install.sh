@@ -2,7 +2,7 @@
 
 #The MIT License (MIT)
 #
-#Copyright (c) 2015-2017 Stefano Cappa
+#Copyright (c) 2015-2019 Stefano Cappa
 #
 #Permission is hereby granted, free of charge, to any person obtaining a copy
 #of this software and associated documentation files (the "Software"), to deal
@@ -28,7 +28,7 @@
 #chmod a+x install.sh
 #bash install.sh
 
-tput setaf 2; echo "Welcome to KS89 dotfiles 2.0 - last update 10/02/2016"
+tput setaf 2; echo "Welcome to KS89 dotfiles 3.0 - last update 11/30/2019"
 
 tput setaf 2; echo "Attention! If you want to run this script install Xcode command line developer tools and Sublime Text"
 tput setaf 2; echo "Please, insert your password if requested"

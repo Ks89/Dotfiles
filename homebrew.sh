@@ -55,14 +55,15 @@ then
   brew link node
 fi
 
-read -p "Would you install/compile MongoDb? Press y or n: " -n 1 -r
+read -p "Would you install/compile MongoDb 4.2? Press y or n: " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   echo installing mongodb
-  brew install mongodb --with-openssl
+  brew tap mongodb/brew
+  brew install mongodb-community@4.2
   #create a folder for mongodb to prevent an error on mac osx
-  sudo mkdir -p /data/db
+  brew services start mongodb-community
 fi
 
 read -p "Would you install/compile haskell? Press y or n: " -n 1 -r
