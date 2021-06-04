@@ -30,9 +30,9 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   echo creating custom global npm location
-  mkdir ~/.npm-global
+  mkdir -p ~/.npm-global
   npm config set prefix '~/.npm-global'
-  echo "export PATH=~/.npm-global/bin:$PATH" >> ~/.zshrc
+  echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.zshrc
   source ~/.zshrc
 
   echo installing npm global packages
