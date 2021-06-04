@@ -1,24 +1,24 @@
 # Dotfiles
 
-My dotfiles for OSX.
+My dotfiles for Mac OS.
 
 # News
-Last update: 11-05-17
+Last update: 04-06-21
 
-Tested on: OSX 10.12 Sierra
+Tested on: OSX 11.4 Big Sur
 
 # Instructions
 
 ```
 chmod a+x install.sh
-bash install.sh
+./install.sh
 ```
 
 # License
 ```
 The MIT License (MIT)
 
-Copyright (c) 2015-2017 Stefano Cappa
+Copyright (c) 2015-2021 Stefano Cappa
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

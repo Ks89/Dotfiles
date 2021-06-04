@@ -2,7 +2,7 @@
 
 #The MIT License (MIT)
 #
-#Copyright (c) 2015-2017 Stefano Cappa
+#Copyright (c) 2015-2021 Stefano Cappa
 #
 #Permission is hereby granted, free of charge, to any person obtaining a copy
 #of this software and associated documentation files (the "Software"), to deal
@@ -29,26 +29,19 @@ read -p "Would you install npm global packages? Press y or n: " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
+  echo creating custom global npm location
+  mkdir ~/.npm-global
+  npm config set prefix '~/.npm-global'
+  echo "export PATH=~/.npm-global/bin:$PATH" >> ~/.zshrc
+  source ~/.zshrc
+
   echo installing npm global packages
-  npm install -g typings
   npm install -g nodemon
   npm install -g npm-check
   npm install -g lite-server
   npm install -g http-server
   npm install -g @angular/cli
-  npm install -g webdriver-manager
   npm install -g nsp
   npm install -g codeclimate-test-reporter
-  npm install -g snyk
-  npm install -g pm2
   npm install -g forever
-  pm2 update
-fi
-
-read -p "Would you update webdriver-manager to be able to use Selenium Server? Press y or n: " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-  echo setting up a Selenium Server
-  sudo webdriver-manager update
 fi

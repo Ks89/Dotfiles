@@ -28,7 +28,7 @@
 echo installing homebrew if necessary
 which -s brew
 if [[ $? != 0 ]] ; then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
     brew update
     brew upgrade
@@ -36,14 +36,9 @@ fi
 
 echo installing homebrew packages, only if not already available
 which -s git || brew install git
-which -s git-lfs || brew install git-lfs
 which -s tig || brew install tig
-which -s readline || brew install readline
 which -s wget || brew install wget
-which -s bash-completion || brew install bash-completion
-which -s autojump || brew install autojump
-which -s python3 || brew install python3
-which -s git-extras || brew install git-extras
+which -s redis || brew install redis
 
 read -p "Would you install Node.js and npm? Press y or n: " -n 1 -r
 echo
@@ -55,21 +50,12 @@ then
   brew link node
 fi
 
-read -p "Would you install/compile MongoDb 4.2? Press y or n: " -n 1 -r
+read -p "Would you install/compile MongoDb? Press y or n: " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   echo installing mongodb
   brew tap mongodb/brew
-  brew install mongodb-community@4.2
-  #create a folder for mongodb to prevent an error on mac osx
-  brew services start mongodb-community
-fi
-
-read -p "Would you install/compile haskell? Press y or n: " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-  echo installing haskell
-  brew cask install haskell-platform
+  brew install mongodb-community@4.4
+  brew services start mongodb-community@4.4
 fi
